@@ -1,0 +1,35 @@
+# Site settings
+title:          Lacriment
+description:    "Lacriment's Blog"
+baseurl:        ""
+url:            "https://blog.lacriment.com"
+
+# Google Analytics
+google_analytics: UA—XXXXXXXX-X
+
+# Author
+author:
+  name:         Taha İbrahim Bayram
+  url:          https://lacriment.com
+  email:        lacriment@gmail.com
+
+# Build settings
+markdown:       kramdown
+include:
+  - _pages
+
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        compressed
+
+# Gems
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+  # - jemoji #Uncomment this to allow emoji in your post
+
+# Permalinks
+permalink:      /:year-:month-:day/:title
+paginate:       10
