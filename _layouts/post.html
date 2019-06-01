@@ -26,3 +26,11 @@ layout: default
 
   <a href="#" class="top">&uarr;</a>
 </div>
+
+<!-- jsfiles -->
+{% for js in page.jsfiles %}
+  <script type="text/javascript">
+      {% include {{ js }} %}
+  </script>
+{% endfor %}
+<!-- jsfiles -->

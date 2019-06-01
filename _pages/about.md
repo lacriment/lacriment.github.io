@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "About"
-author: "Chester"
+author: "Taha Ibrahim Bayram"
 permalink: /about/
 ---
 
-Biri.  
+Proğramcı.
