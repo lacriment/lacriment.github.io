@@ -63,7 +63,7 @@ let style_height = getComputedStyle(canvas).getPropertyValue("height").slice(0, 
 //get CSS width
 let style_width = getComputedStyle(canvas).getPropertyValue("width").slice(0, -2);
 //scale the canvas
-canvas.setAttribute('height', style_height * dpi);
+canvas.setAttribute('height', style_height * dpi+50);
 canvas.setAttribute('width', style_width * dpi);
 var canvasWidth = canvas.offsetWidth;
 // end fix dpi
@@ -88,16 +88,16 @@ var pos = canvasWidth*dpi;
 ctx.fillStyle = "#ffe500";
 ctx.fillRect(0, 50, pos, 70);
 ctx.fillStyle = "#555";
-ctx.font = "40px Merriweather";
-ctx.fillText("Toplam: 12000 germe (sağ ve sol ayrı)", 30, 100);
+ctx.font = "2.5em Merriweather";
+ctx.fillText("Toplam: 12000", 30, 100);
 
 // calculated
 pos = Math.min(canvasWidth*dpi*calculatedProgress/100, canvasWidth*dpi);
 ctx.fillStyle = "#195e9b";
 ctx.fillRect(0, 150, pos, 70);
 ctx.fillStyle = "#fff";
-ctx.font = "40px Merriweather";
-ctx.fillText("Beklenen: " + 200*totalDays + " germe", 30, 200);
+ctx.font = "2.5em Merriweather";
+ctx.fillText("Beklenen: " + 200*totalDays, 30, 200);
 ctx.fillText("%"+Math.round(calculatedProgress), pos - 120, 200);
 
 
@@ -106,6 +106,6 @@ pos = Math.min(canvasWidth*dpi*actualProgress/100, canvasWidth*dpi);
 ctx.fillStyle = "#1cbc71";
 ctx.fillRect(0, 250, pos, 70);
 ctx.fillStyle = "#fff";
-ctx.font = "40px Merriweather";
-ctx.fillText("Ulaşılan: " + totalKepaze + " germe", 30, 300);
+ctx.font = "2.5em Merriweather";
+ctx.fillText("Ulaşılan: " + totalKepaze, 30, 300);
 ctx.fillText("%"+Math.round(actualProgress), pos - 120, 300);
