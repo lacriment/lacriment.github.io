@@ -40,7 +40,19 @@ const talim = [
   ["30.05.19", 450],
   ["31.05.19", 400],
   ["31.05.19", 440],
-  ["31.05.19", 400]
+  ["31.05.19", 400],
+  // -- bayram tatili
+  ["12.06.19", 450],
+  ["13.06.19", 250],
+  ["14.06.19", 0],
+  ["15.06.19", 0],
+  ["16.06.19", 0],
+  ["17.06.19", 0],
+  ["18.06.19", 0],
+  ["19.06.19", 300],
+  ["20.06.19", 250],
+  ["21.06.19", 200],
+  ["22.06.19", 50]
 ]
 var canvas = document.getElementById('kepaze');
 var ctx = canvas.getContext('2d');
@@ -72,25 +84,28 @@ var actualProgress = totalKepaze * 100 / 12000;
 var calculatedProgress = 200 * totalDays * 100 / 12000;
 
 // total
+var pos = canvasWidth*dpi;
 ctx.fillStyle = "#ffe500";
-ctx.fillRect(0, 50, canvasWidth*dpi, 70);
+ctx.fillRect(0, 50, pos, 70);
 ctx.fillStyle = "#555";
 ctx.font = "40px Merriweather";
 ctx.fillText("Toplam: 12000 germe (sağ ve sol ayrı)", 30, 100);
 
 // calculated
+pos = Math.min(canvasWidth*dpi*calculatedProgress/100, canvasWidth*dpi);
 ctx.fillStyle = "#195e9b";
-ctx.fillRect(0, 150, canvasWidth*dpi*calculatedProgress/100, 70);
+ctx.fillRect(0, 150, pos, 70);
 ctx.fillStyle = "#fff";
 ctx.font = "40px Merriweather";
 ctx.fillText("Beklenen: " + 200*totalDays + " germe", 30, 200);
-ctx.fillText("%"+Math.round(calculatedProgress), canvasWidth*dpi*calculatedProgress/100 - 120, 200);
+ctx.fillText("%"+Math.round(calculatedProgress), pos - 120, 200);
 
 
 // actual
+pos = Math.min(canvasWidth*dpi*actualProgress/100, canvasWidth*dpi);
 ctx.fillStyle = "#1cbc71";
-ctx.fillRect(0, 250, canvasWidth*dpi*actualProgress/100, 70);
+ctx.fillRect(0, 250, pos, 70);
 ctx.fillStyle = "#fff";
 ctx.font = "40px Merriweather";
 ctx.fillText("Ulaşılan: " + totalKepaze + " germe", 30, 300);
-ctx.fillText("%"+Math.round(actualProgress), canvasWidth*dpi*actualProgress/100 - 120, 300);
+ctx.fillText("%"+Math.round(actualProgress), pos - 120, 300);
